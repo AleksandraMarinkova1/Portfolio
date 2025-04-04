@@ -1,20 +1,14 @@
-
+import React from "react";
 import { Container, Typography, Button, Box, Grid } from '@mui/material';
-import React from 'react';
-import CVAndContactMe from './header/CVAndContactMe';
-import me from '../../portfolio/src/assets/me.jpeg'
-import Footer from '../src/footer/Footer.jsx'
-import Nav from '../src/nav/Nav.jsx' 
-import About from '../src/about/About.jsx'
-// import Experience from './experience/Experience.jsx';
-import Experience from './experience/Experience.jsx';
-import Contacts from './contacts/Contacts.jsx';
-import Header from './header/Header.jsx';
+// import CVAndContactMe from './header/CVAndContactMe';
+// import me from '../../portfolio/src/assets/me.jpeg'
+import CVAndContactMe from "./CVAndContactMe";
+import me from '../../src/assets/me.jpeg'
 
-function App() {
-  return (
-    <>
-    {/* <header id="home">
+
+const Header = () => {
+    return (
+  <header id="home">
       <Container
         maxWidth="lg"
         sx={{
@@ -39,7 +33,7 @@ function App() {
           </Grid>
           <Grid item>
             <Typography variant="h5" sx={{ fontWeight: 300, color: 'gray' }}>
-              Software Engineering Undergraduate
+             FullStack Developer
             </Typography>
           </Grid>
           <Grid item>
@@ -86,15 +80,7 @@ function App() {
           </Grid>
         </Grid>
       </Container>
-    </header> */}
-    <Header/>
-     <About/>
-     <Experience/>
-     <Nav/>
-     <Contacts />
-     <Footer/>
-     </>
-  );
+    </header>
+    );
 }
-
-export default App;
+export default Header;
