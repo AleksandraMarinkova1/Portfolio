@@ -4,6 +4,7 @@ import { Container, Typography, Button, Box, Grid } from '@mui/material';
 // import me from '../../portfolio/src/assets/me.jpeg'
 import CVAndContactMe from "./CVAndContactMe";
 import me from '../../src/assets/me.jpeg'
+import HeaderSocials from "./HeaderSocials";
 
 
 const Header = () => {
@@ -17,7 +18,7 @@ const Header = () => {
           alignItems: 'center',
           height: '100vh',
           textAlign: 'center',
-          backgroundColor: '#f0f0f0',
+          backgroundColor: '#FFE479',
         }}
       >
         <Grid container direction="column" justifyContent="center" alignItems="center" spacing={2}>
@@ -39,28 +40,19 @@ const Header = () => {
           <Grid item>
             <CVAndContactMe />
           </Grid>
+         
           <Grid item>
             <Box mt={3}>
               <a href="#contacts" className="scroll__down">
               <Typography
                   variant="body1"
                   sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '18px',
-                    color: '#000',
-                    textDecoration: 'none',
-                    fontWeight: 'bold',
-                    transform: 'rotate(-90deg)', // Rotates the text
-                    whiteSpace: 'nowrap',
-                    height: 'auto',
-                    width: 'auto',
-                    cursor: 'pointer',
-                    marginLeft:'300%',
-                    '&:hover': {
-                      color: '#007bff', // Change color on hover
-                    },
+                  position:'absolute',
+                  right:'-1.1rem',
+                  bottom:'5rem',
+                  transform:'rotate(90deg)',
+                  fontWeight:'300px',
+                  fontSize:'1.6rem'
                   }}
                 >
                   Scroll Down
@@ -69,14 +61,17 @@ const Header = () => {
               src={me}
               alt="me"
               style={{
-                width: '150px', // Adjust the width as needed
+                width: '180px', // Adjust the width as needed
                 height: 'auto', // Maintain aspect ratio
-                borderRadius: '50%', // Optional: makes the image circular
+                borderRadius: '7%', // Optional: makes the image circular
               }}
             />
               </a>
              
             </Box>
+          </Grid>
+          <Grid item>
+            <HeaderSocials/>
           </Grid>
         </Grid>
       </Container>

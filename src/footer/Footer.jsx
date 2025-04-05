@@ -54,7 +54,7 @@ const Footer = () => {
     </IconButton>
     <IconButton
       color="inherit"
-      href="https://github.com/Thakshila-Bandara"
+      href="https://github.com/AleksandraMarinkova1?tab=projects"
       target="_blank"
     >
       <GitHubIcon />

@@ -15,7 +15,7 @@ const CVAndContactMe = () => {
         </Button>
         </a>
         </Box>
-        <Button variant="contained" >
+        <Button a href ='#contacts'variant="contained" >
           Contact Me
         </Button>
         </Box>

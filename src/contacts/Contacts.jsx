@@ -14,7 +14,7 @@ const Contacts = () => {
         Contact Me
       </Typography>
 
-      <Box className="container" sx={{ maxWidth: '800px', mx: 'auto', px: 3 }}>
+      <Box className="container" sx={{ maxWidth: '1000px', mx: 'auto', px: 3 }}>
         <Grid container spacing={4}>
           {/* Contact Option */}
           <Grid item xs={12} md={4}>
@@ -45,7 +45,7 @@ const Contacts = () => {
           </Grid>
 
           {/* Contact Form */}
-          <Grid item xs={12} md={10}>
+          <Grid item xs={12} md={10} sx={{width:'50%'}}>
             <Box
               ref={form}
               component="form"
