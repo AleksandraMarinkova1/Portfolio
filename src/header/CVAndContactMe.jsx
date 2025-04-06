@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Typography, Button,Box } from '@mui/material';
+import { Button,Box } from '@mui/material';
 import CV from '../assets/Aleksandra Marinkova CV.pdf'
 
 const CVAndContactMe = () => {

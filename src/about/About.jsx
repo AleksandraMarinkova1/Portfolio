@@ -1,8 +1,5 @@
 import React from 'react';
-import { Box, Typography, Grid, Card, CardContent,Divider } from '@mui/material';
-// import { GiGraduateCap } from 'react-icons/gi';
-// import { BsBookmarkStar } from 'react-icons/bs';
-// import { TfiWorld } from 'react-icons/tfi';
+import { Box, Typography, Card, CardContent,Divider } from '@mui/material';
 import myImage from '../assets/me.jpeg'
 
 const About = () => {
@@ -19,19 +16,17 @@ const About = () => {
 
       <Box className="container about__container" sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'space-between', gap: 4 }}>
         
-        {/* About Me Image */}
         <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
           <img src={myImage} alt="Me" style={{ borderRadius: '50%', width: '200px', height: '200px', objectFit: 'cover' }} />
         </Box>
 
-        {/* About Content */}
+        
         <Box sx={{ flex: 2 }}>
           <Box sx={{ display: 'flex', gap: 4, justifyContent: 'space-between', marginBottom: 4 }}>
             
-            {/* Degree Card */}
+           
             <Card sx={{ width: '50%' }}>
               <CardContent>
-                {/* <GiGraduateCap style={{ fontSize: '2rem', color: '#1976d2' }} /> */}
                 <Typography variant="h6" sx={{ fontWeight: 'bold' }}>Degree</Typography>
                 <Typography variant="body2" color="textSecondary">
                 Faculty of Computer Science and Engineering) <br />
@@ -41,10 +36,8 @@ const About = () => {
               </CardContent>
             </Card>
 
-            {/* GPA Card */}
             <Card sx={{ width: '50%' }}>
               <CardContent>
-                {/* <BsBookmarkStar style={{ fontSize: '2rem', color: '#1976d2' }} /> */}
                 <Typography variant="h6" sx={{ fontWeight: 'bold' }}>Certifications</Typography>
                 <Typography variant="body2" color="textSecondary">Amazon Web Services (AWS)  01/07/2024 – 01/07/2027 </Typography>
               </CardContent>
@@ -55,7 +48,7 @@ const About = () => {
           </Box>
 
           <Typography variant="body1" color="textSecondary">
-          • Software development engineer with 1 year and 9 months of experience in the software development
+          • Software development engineer with 1 year and 10 months of experience in the software development
 industry. <Divider/>
 • Experienced in frontend web and backend development, mainly using Javascript frameworks(React) with
 backend experience with node.js, OOP, databases. <Divider/>

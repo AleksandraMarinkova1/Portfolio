@@ -14,7 +14,7 @@ const HeaderSocials = () => {
         bottom: '3rem'}}>
 
         <a href="https://www.linkedin.com/in/aleksandra-marinkova-964ba3235/" target="_blank" rel='noreferrer'><LinkedInIcon/></a>
-        <a href="https://github.com/AleksandraMarinkova1?tab=projects" target="_blank" rel='noreferrer'><GitHubIcon/></a>
+        <a href="https://github.com/AleksandraMarinkova1?tab=repositories" target="_blank" rel='noreferrer'><GitHubIcon/></a>
     </div>
   )
 }

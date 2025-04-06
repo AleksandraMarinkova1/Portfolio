@@ -10,22 +10,21 @@ const Footer = () => {
   sx={{
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',           // Center content vertically
-    alignItems: 'center',               // Center content horizontally
+    justifyContent: 'center',       
+    alignItems: 'center',            
     width: '100%',
-    height: '60vh',                     // Footer height
-    py: 4,                              // Padding top and bottom (theme spacing * 4 = 32px)
+    height: '60vh',                   
+    py: 4,                              
     backgroundColor: '#333',
     color: '#fff',
     position: 'relative'
   }}
 >
-  {/* Logo */}
+  
   <Typography variant="h6" className="footer__logo" sx={{ fontWeight: 'bold', color: '#fff' }}>
     ALEKSANDRA
   </Typography>
 
-  {/* Navigation Links */}
   <Box sx={{ mt: 2 }}>
     <Grid container spacing={2} justifyContent="center">
       <Grid item>
@@ -43,7 +42,7 @@ const Footer = () => {
     </Grid>
   </Box>
 
-  {/* Social Icons */}
+  
   <Box sx={{ mt: 2 }}>
     <IconButton
       color="inherit"
@@ -54,7 +53,7 @@ const Footer = () => {
     </IconButton>
     <IconButton
       color="inherit"
-      href="https://github.com/AleksandraMarinkova1?tab=projects"
+      href="https://github.com/AleksandraMarinkova1?tab=repositories"
       target="_blank"
     >
       <GitHubIcon />
@@ -62,7 +61,7 @@ const Footer = () => {
   </Box>
 </Box>
 
-{/* Copyright */}
+
 <Box sx={{ textAlign: 'center', mt: 2 }}>
   <Typography variant="body2" color="inherit">
     &copy; Aleksandra Marinkova. All rights reserved.

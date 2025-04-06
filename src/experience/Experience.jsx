@@ -24,7 +24,7 @@ const Experience = () => {
 
       <Box className="container" sx={{ maxWidth: '1100px', margin: '0 auto', px: 2 }}>
         <Grid container spacing={4}>
-          {/* Frontend Skills */}
+    
           <Grid item xs={12} md={6}>
             <Typography variant="h5" sx={{ mb: 2 }}>
               Frontend Development
@@ -38,7 +38,7 @@ const Experience = () => {
             </Grid>
           </Grid>
 
-          {/* Backend Skills */}
+      
           <Grid item xs={12} md={6}>
             <Typography variant="h5" sx={{ mb: 2 }}>
               Backend Development

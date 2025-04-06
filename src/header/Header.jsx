@@ -1,7 +1,5 @@
 import React from "react";
-import { Container, Typography, Button, Box, Grid } from '@mui/material';
-// import CVAndContactMe from './header/CVAndContactMe';
-// import me from '../../portfolio/src/assets/me.jpeg'
+import { Container, Typography, Box, Grid } from '@mui/material';
 import CVAndContactMe from "./CVAndContactMe";
 import me from '../../src/assets/me.jpeg'
 import HeaderSocials from "./HeaderSocials";
@@ -18,7 +16,7 @@ const Header = () => {
           alignItems: 'center',
           height: '100vh',
           textAlign: 'center',
-          backgroundColor: '#FFE479',
+          backgroundColor: '#ebe8e8',
         }}
       >
         <Grid container direction="column" justifyContent="center" alignItems="center" spacing={2}>
@@ -61,9 +59,9 @@ const Header = () => {
               src={me}
               alt="me"
               style={{
-                width: '180px', // Adjust the width as needed
-                height: 'auto', // Maintain aspect ratio
-                borderRadius: '7%', // Optional: makes the image circular
+                width: '180px',
+                height: 'auto',
+                borderRadius: '7%',
               }}
             />
               </a>
