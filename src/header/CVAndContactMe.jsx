@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button,Box } from '@mui/material';
-import CV from '../assets/Aleksandra Marinkova CV.pdf'
+import CV from '../assets/Resume.pdf'
 
 const CVAndContactMe = () => {
 
@@ -9,7 +9,7 @@ const CVAndContactMe = () => {
     return (
       <Box sx={{ display:'flex'}}>
       <Box sx={{ gap:'5',paddingRight:'28px'}}>
-        <a href={CV} download="Aleksandra Marinkova CV.pdf">
+        <a href={CV} download="Aleksandra Marinkova-Resume(1).pdf">
         <Button variant="text" style={{paddingRight:'4px',border:'1px solid blue'}} >
           Download CV
         </Button>

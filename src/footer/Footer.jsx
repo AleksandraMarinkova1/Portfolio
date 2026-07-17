@@ -1,74 +1,92 @@
-import React from 'react';
-import { Box, Typography, IconButton, Grid } from '@mui/material';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
+import React from "react";
+import {
+  Box,
+  Typography,
+  IconButton,
+  Stack,
+  Link as MuiLink,
+} from "@mui/material";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 const Footer = () => {
+  const links = [
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Experience", href: "#experience" },
+    { name: "My Projects", href: "#myprojects" },
+  ];
+
   return (
-    <>
-     <Box
-  sx={{
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',       
-    alignItems: 'center',            
-    width: '100%',
-    height: '60vh',                   
-    py: 4,                              
-    backgroundColor: '#333',
-    color: '#fff',
-    position: 'relative'
-  }}
->
-  
-  <Typography variant="h6" className="footer__logo" sx={{ fontWeight: 'bold', color: '#fff' }}>
-    ALEKSANDRA
-  </Typography>
-
-  <Box sx={{ mt: 2 }}>
-    <Grid container spacing={2} justifyContent="center">
-      <Grid item>
-        <a href="#home" style={{ textDecoration: 'none', color: '#fff' }}>Home</a>
-      </Grid>
-      <Grid item>
-        <a href="#about" style={{ textDecoration: 'none', color: '#fff' }}>About</a>
-      </Grid>
-      <Grid item>
-        <a href="#experience" style={{ textDecoration: 'none', color: '#fff' }}>Experience</a>
-      </Grid>
-      <Grid item>
-        <a href="#myprojects" style={{ textDecoration: 'none', color: '#fff' }}>My Projects</a>
-      </Grid>
-    </Grid>
-  </Box>
-
-  
-  <Box sx={{ mt: 2 }}>
-    <IconButton
-      color="inherit"
-      href="https://www.linkedin.com/in/aleksandra-marinkova-964ba3235/"
-      target="_blank"
+    <Box
+      component="footer"
+      sx={{
+        width: "100%",
+        py: 6,
+        backgroundColor: "#1a1a1a", // Потемна нијанса за подобар контраст
+        color: "#fff",
+        textAlign: "center",
+      }}
     >
-      <LinkedInIcon />
-    </IconButton>
-    <IconButton
-      color="inherit"
-      href="https://github.com/AleksandraMarinkova1?tab=repositories"
-      target="_blank"
-    >
-      <GitHubIcon />
-    </IconButton>
-  </Box>
-</Box>
+      <Typography
+        variant="h5"
+        sx={{ fontWeight: "bold", mb: 3, letterSpacing: "2px" }}
+      >
+        ALEKSANDRA
+      </Typography>
 
+      <Stack
+        direction="row"
+        justifyContent="center"
+        spacing={{ xs: 2, md: 4 }}
+        sx={{ mb: 3 }}
+      >
+        {links.map((link) => (
+          <MuiLink
+            key={link.name}
+            href={link.href}
+            underline="none"
+            sx={{
+              color: "#aaa",
+              "&:hover": { color: "#fff" },
+              transition: "0.3s",
+            }}
+          >
+            {link.name}
+          </MuiLink>
+        ))}
+      </Stack>
 
-<Box sx={{ textAlign: 'center', mt: 2 }}>
-  <Typography variant="body2" color="inherit">
-    &copy; Aleksandra Marinkova. All rights reserved.
-  </Typography>
-</Box>
+      <Stack direction="row" justifyContent="center" spacing={2} sx={{ mb: 3 }}>
+        <IconButton
+          component="a"
+          href="https://www.linkedin.com/in/aleksandra-marinkova-964ba3235/"
+          target="_blank"
+          sx={{
+            color: "#aaa",
+            "&:hover": { color: "#0077b5", transform: "scale(1.1)" },
+          }}
+        >
+          <LinkedInIcon />
+        </IconButton>
+        <IconButton
+          component="a"
+          href="https://github.com/AleksandraMarinkova1?tab=repositories"
+          target="_blank"
+          sx={{
+            color: "#aaa",
+            "&:hover": { color: "#fff", transform: "scale(1.1)" },
+          }}
+        >
+          <GitHubIcon />
+        </IconButton>
+      </Stack>
 
-    </>
+      <Typography variant="body2" sx={{ color: "#666", fontSize: "0.8rem" }}>
+        &copy; {new Date().getFullYear()} Aleksandra Marinkova. Built with React
+        & MUI.
+      </Typography>
+    </Box>
   );
 };
 

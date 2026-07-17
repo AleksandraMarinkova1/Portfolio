@@ -1,110 +1,165 @@
-import React, { useRef } from 'react';
-import { Box, Typography, Grid, Paper, TextField, Button, Link } from '@mui/material';
-import MailIcon from '@mui/icons-material/Mail';
+import React, { useRef } from "react";
+import { Box, Typography, Paper, TextField, Button, Link } from "@mui/material";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
 
 const Contacts = () => {
   const form = useRef();
 
   return (
-    <Box id="contacts" sx={{ py: 6, backgroundColor: '#0a0a23', color: '#fff' }}>
-      <Typography variant="h5" align="center" sx={{ color: '#aaa' }}>
-        Get in touch
-      </Typography>
-      <Typography variant="h3" align="center" sx={{ mb: 4 }}>
-        Contact Me
-      </Typography>
+    <section id="contacts">
+      <Box
+        sx={{
+          py: 10,
+          px: 2,
+        }}
+      >
+        <Typography
+          variant="h6"
+          align="center"
+          color="text.secondary"
+          sx={{ mb: 1 }}
+        >
+          Get In Touch
+        </Typography>
 
-      <Box className="container" sx={{ maxWidth: '1000px', mx: 'auto', px: 3 }}>
-        <Grid container spacing={4}>
-     
-          <Grid item xs={12} md={4}>
+        <Typography
+          variant="h3"
+          align="center"
+          fontWeight="bold"
+          sx={{ mb: 8 }}
+        >
+          Contact Me
+        </Typography>
+
+        <Box
+          sx={{
+            maxWidth: "1100px",
+            mx: "auto",
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            gap: 5,
+            alignItems: "stretch",
+          }}
+        >
+          {/* LEFT SIDE */}
+          <Box
+            sx={{
+              flex: 1,
+              display: "flex",
+            }}
+          >
             <Paper
-              elevation={3}
+              elevation={6}
               sx={{
-                p: 3,
-                backgroundColor: '#1e1e2f',
-                color: '#fff',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                gap: 1,
-                textAlign: 'center',
+                width: "100%",
+                borderRadius: 4,
+                p: 5,
+                // Отстрането: textAlign: "center"
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center", // Ова ги центрира сите деца хоризонтално
+                justifyContent: "center",
+                transition: ".3s",
+                "&:hover": {
+                  transform: "translateY(-8px)",
+                },
               }}
             >
-              <MailIcon size={32} color="#4db5ff" />
-              <Typography variant="h6">Email</Typography>
-              <Typography variant="body2">marinkova_aleksandra@yahoo.com</Typography>
+              <MailOutlineIcon
+                sx={{
+                  fontSize: 40,
+                  color: "primary.main",
+                  mb: 2,
+                  // Иконата сега ќе биде центрирана од alignItems: "center" на Paper
+                }}
+              />
+
+              <Typography variant="h5" fontWeight="bold">
+                Email
+              </Typography>
+
+              <Typography
+                color="text.secondary"
+                sx={{
+                  mt: 2,
+                  wordBreak: "break-word",
+                  textAlign: "center", // Додадено за текстот да остане центриран
+                }}
+              >
+                marinkova_aleksandra@yahoo.com
+              </Typography>
+
               <Link
                 href="mailto:marinkova_aleksandra@yahoo.com"
                 underline="none"
-                sx={{ mt: 1, color: '#4db5ff', fontWeight: 'bold' }}
-              >
-                Send a message
-              </Link>
-            </Paper>
-          </Grid>
-
-         
-          <Grid item xs={12} md={10} sx={{width:'50%'}}>
-            <Box
-              ref={form}
-              component="form"
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 2,
-                backgroundColor: '#1e1e2f',
-                p: 3,
-                borderRadius: 2
-              }}
-            >
-              <TextField
-                label="Your Full Name"
-                name="name"
-                required
-                fullWidth
-                variant="filled"
-                InputProps={{ style: { color: 'white' } }}
-                InputLabelProps={{ style: { color: '#aaa' } }}
-              />
-              <TextField
-                label="Your Email"
-                name="email"
-                type="email"
-                required
-                fullWidth
-                variant="filled"
-                InputProps={{ style: { color: 'white' } }}
-                InputLabelProps={{ style: { color: '#aaa' } }}
-              />
-              <TextField
-                label="Your Message"
-                name="message"
-                required
-                multiline
-                rows={5}
-                fullWidth
-                variant="filled"
-                InputProps={{ style: { color: 'white' } }}
-                InputLabelProps={{ style: { color: '#aaa' } }}
-              />
-              <Button
-                type="submit"
-                variant="contained"
                 sx={{
-                  mt: 2,
-                  backgroundColor: '#4db5ff',
-                  fontWeight: 'bold',
-                  '&:hover': { backgroundColor: '#3a97d3' },
+                  mt: 3,
+                  fontWeight: 600,
+                  fontSize: "1rem",
                 }}
               >
-                Send Message
-              </Button>
-            </Box>
-          </Grid>
-        </Grid>
+                Send a Message →
+              </Link>
+            </Paper>
+          </Box>
+
+          {/* RIGHT SIDE */}
+          <Box sx={{ flex: 2 }}>
+            <Paper
+              elevation={6}
+              sx={{
+                borderRadius: 4,
+                p: { xs: 3, md: 5 },
+              }}
+            >
+              <Box
+                ref={form}
+                component="form"
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 3,
+                }}
+              >
+                <TextField label="Full Name" name="name" fullWidth required />
+
+                <TextField
+                  label="Email Address"
+                  name="email"
+                  type="email"
+                  fullWidth
+                  required
+                />
+
+                <TextField
+                  label="Message"
+                  name="message"
+                  multiline
+                  rows={6}
+                  fullWidth
+                  required
+                />
+
+                <Button
+                  variant="contained"
+                  size="large"
+                  sx={{
+                    mt: 2,
+                    py: 1.7,
+                    fontWeight: "bold",
+                    borderRadius: 3,
+                    textTransform: "none",
+                    fontSize: "1rem",
+                  }}
+                >
+                  Send Message
+                </Button>
+              </Box>
+            </Paper>
+          </Box>
+        </Box>
       </Box>
-    </Box>
+    </section>
   );
 };
 
