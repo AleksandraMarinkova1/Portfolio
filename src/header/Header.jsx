@@ -1,79 +1,123 @@
 import React from "react";
-import { Container, Typography, Box, Grid } from '@mui/material';
+import { Container, Typography, Box, Stack } from "@mui/material";
 import CVAndContactMe from "./CVAndContactMe";
-import me from '../../src/assets/me.jpeg'
+import me from "../../src/assets/me.jpeg";
 import HeaderSocials from "./HeaderSocials";
 
-
 const Header = () => {
-    return (
-  <header id="home">
-      <Container
-        maxWidth="lg"
+  return (
+    <header id="home">
+      <Box
         sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '100vh',
-          textAlign: 'center',
-          backgroundColor: '#ebe8e8',
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          background: "linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%)", // Нежен градиент
+          position: "relative",
+          overflow: "hidden",
+          px: 2,
         }}
       >
-        <Grid container direction="column" justifyContent="center" alignItems="center" spacing={2}>
-          <Grid item>
-            <Typography variant="h5" sx={{ fontWeight: 400 }}>
-              Hello, I'm
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Typography variant="h3" sx={{ fontWeight: 'bold' }}>
-              Aleksandra Marinkova
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Typography variant="h5" sx={{ fontWeight: 300, color: 'gray' }}>
-             FullStack Developer
-            </Typography>
-          </Grid>
-          <Grid item>
-            <CVAndContactMe />
-          </Grid>
-         
-          <Grid item>
-            <Box mt={3}>
-              <a href="#contacts" className="scroll__down">
+        <Box
+          sx={{
+            position: "absolute",
+            width: "500px",
+            height: "500px",
+            background: "linear-gradient(to right, #6366f1, #a855f7)",
+            filter: "blur(100px)",
+            opacity: 0.15,
+            borderRadius: "50%",
+            top: "-100px",
+            right: "-100px",
+          }}
+        />
+
+        <Container maxWidth="lg">
+          <Stack
+            direction={{ xs: "column", md: "row" }}
+            alignItems="center"
+            justifyContent="space-between"
+            spacing={8}
+          >
+            <Stack
+              spacing={2}
+              textAlign={{ xs: "center", md: "left" }}
+              sx={{ maxWidth: "600px" }}
+            >
               <Typography
-                  variant="body1"
+                variant="h6"
+                sx={{ color: "#6366f1", fontWeight: 600, letterSpacing: "2px" }}
+              >
+                WELCOME TO MY PORTFOLIO
+              </Typography>
+              <Typography
+                variant="h1"
+                sx={{
+                  fontWeight: 900,
+                  fontSize: { xs: "3rem", md: "4.5rem" },
+                  lineHeight: 1.1,
+                }}
+              >
+                Hi, I'm <br />
+                <Box
+                  component="span"
                   sx={{
-                  position:'absolute',
-                  right:'-1.1rem',
-                  bottom:'5rem',
-                  transform:'rotate(90deg)',
-                  fontWeight:'300px',
-                  fontSize:'1.6rem'
+                    background: "linear-gradient(to right, #6366f1, #a855f7)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
                   }}
                 >
-                  Scroll Down
-                </Typography>
-                <img
-              src={me}
-              alt="me"
-              style={{
-                width: '180px',
-                height: 'auto',
-                borderRadius: '7%',
-              }}
-            />
-              </a>
-             
+                  Aleksandra
+                </Box>
+              </Typography>
+              <Typography variant="h5" sx={{ color: "#666", fontWeight: 300 }}>
+                FullStack Developer specialized in building scalable web
+                applications with modern technologies.
+              </Typography>
+              <Box sx={{ pt: 2 }}>
+                <CVAndContactMe />
+              </Box>
+            </Stack>
+
+            <Box sx={{ position: "relative" }}>
+              <Box
+                component="img"
+                src={me}
+                alt="Aleksandra"
+                sx={{
+                  width: { xs: "280px", md: "400px" },
+                  height: { xs: "350px", md: "500px" },
+                  objectFit: "cover",
+                  borderRadius: "20px",
+                  boxShadow: "0 30px 60px rgba(0,0,0,0.2)",
+                  position: "relative",
+                  zIndex: 2,
+                }}
+              />
+
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: "20px",
+                  right: "-20px",
+                  width: "100%",
+                  height: "100%",
+                  border: "4px solid #6366f1",
+                  borderRadius: "20px",
+                  zIndex: 1,
+                }}
+              />
             </Box>
-          </Grid>
-          <Grid item>
-            <HeaderSocials/>
-          </Grid>
-        </Grid>
-      </Container>
+          </Stack>
+        </Container>
+
+        <Box sx={{ position: "absolute", left: "3rem", bottom: "3rem" }}>
+          <HeaderSocials />
+        </Box>
+      </Box>
     </header>
-    );
-}
+  );
+};
+
 export default Header;
